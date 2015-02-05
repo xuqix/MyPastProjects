@@ -1,0 +1,21 @@
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+;补丁功能代码需要的DLL,函数名,字符串等全局变量定义,示例,全局变量只读！
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+;szUser32	 db	'user32',0
+;szMessageBoxA	 db	'MessageBoxA',0
+;szCaption	 db	'恭喜',0
+
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+;补丁功能部分,此部分将作为代码被添加到目标文件
+;_dwKernelBase:		kernel32/kernelbase.dll基址
+;_lpGetProcAddress:	GetProcAddress地址
+;_lpLoadLibraryA	LoadLibraryExA地址
+;>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+_Patch	proc	_dwKernelBase,_lpGetProcAddress,_lpLoadLibraryExA
+		local	@dwReturn
+
+		pushad
+
+		popad
+		ret
+_Patch	endp

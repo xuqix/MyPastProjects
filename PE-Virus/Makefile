@@ -1,0 +1,18 @@
+NAME = DiyPatch
+OBJS = $(NAME).obj
+RES  = $(NAME).res
+
+LINK_FLAG = /subsystem:windows
+ML_FLAG = /c /coff
+
+$(NAME).exe: $(OBJS) $(RES)
+	Link $(LINK_FLAG) $(OBJS) $(RES)
+
+$(NAME).obj:addcode.asm  destroy.asm
+	ml $(ML_FLAG) $(NAME).asm
+#.rc.res:
+#	rc $<
+
+clean:
+	del *.obj
+#	del *.res

@@ -1,0 +1,220 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG DIALOGEX 0, 0, 505, 287
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "补丁工具"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "创建Loader",IDC_LOADER,427,208,50,14
+    PUSHBUTTON      "退出",IDCANCEL,429,268,48,12
+    DEFPUSHBUTTON   "创建补丁",IDC_PATCH,427,228,50,14
+    PUSHBUTTON      "关于",IDM_HELP_ABOUT,365,268,49,12
+    PUSHBUTTON      "高级设置",IDC_SET,427,188,50,14
+    GROUPBOX        "",IDC_STATIC,411,181,77,73
+    CONTROL         "",IDC_LISTVIEW,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,15,103,375,149
+    GROUPBOX        "添加补丁",IDC_STATIC,398,102,92,79
+    LTEXT           "原始字节",IDC_STATIC,400,125,37,8
+    LTEXT           "新的字节",IDC_STATIC,400,137,38,8
+    GROUPBOX        "",IDC_STATIC,7,7,491,255
+    LTEXT           "偏移",IDC_STATIC,401,113,25,8
+    CONTROL         "",IDC_OFFSET,"HexEdit",WS_BORDER | WS_TABSTOP | 0x89,440,111,41,11
+    CONTROL         "",IDC_OLDBYTE,"HexEdit",WS_BORDER | WS_TABSTOP | 0x89,440,124,41,11
+    CONTROL         "",IDC_NEWBYTE,"HexEdit",WS_BORDER | WS_TABSTOP | 0x89,440,137,41,11
+    PUSHBUTTON      "添加",IDC_ADD,441,151,35,11
+    PUSHBUTTON      "删除",IDC_DELETE,441,164,36,11
+    PUSHBUTTON      "清空",IDC_CLEAR,402,154,35,17
+    GROUPBOX        "",IDC_STATIC,15,18,472,74
+    LTEXT           "目标文件:",IDC_STATIC,35,31,41,12
+    EDITTEXT        IDC_PATH,79,29,206,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "浏览",IDC_OPEN,297,28,56,14
+    GROUPBOX        "地址类型",IDC_STATIC,385,33,92,49
+    CONTROL         "文件偏移",IDC_FILE_OFFSET,"Button",BS_AUTORADIOBUTTON,403,49,58,11
+    CONTROL         "虚拟地址",IDC_VIRTUALADDRESS,"Button",BS_AUTORADIOBUTTON,403,63,58,11
+    PUSHBUTTON      "定制补丁",IDC_DIY,98,55,37,29
+    PUSHBUTTON      "生成自定义补丁",IDC_CREATE,147,55,37,29,BS_MULTILINE | WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,85,47,119,42
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 206, 131
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "来自K的补丁小工具"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,80,106,50,14
+    GROUPBOX        "",IDC_STATIC,7,1,194,123,0,WS_EX_STATICEDGE
+    CONTROL         111,IDC_STATIC,"Static",SS_BITMAP,20,22,65,68
+    LTEXT           "    对于本程序有任何疑问的朋友欢迎前来探讨，我的联系方烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫",IDC_STATIC,101,40,81,45
+END
+
+IDD_SET DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "高级设置"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "选择Loader方式",IDC_STATIC,171,23,130,125,WS_GROUP
+    CONTROL         "线程监测",IDC_THREAD,"Button",BS_AUTORADIOBUTTON,203,62,79,13
+    CONTROL         "调试寄存器",IDC_DEBUG,"Button",BS_AUTORADIOBUTTON,203,109,79,13
+    GROUPBOX        "选择patch方式",IDC_STATIC,23,22,130,125,WS_GROUP
+    CONTROL         "(补丁代码)添加到PE头",IDC_ADDHEADER,"Button",BS_AUTORADIOBUTTON,49,50,98,13
+    CONTROL         "添加到新区段",IDC_ADDNEW,"Button",BS_AUTORADIOBUTTON,49,75,62,13
+    CONTROL         "添加到最后区段",IDC_ADDLAST,"Button",BS_AUTORADIOBUTTON,49,100,73,13
+    CONTROL         "文件直接补丁",IDC_ADDFILE,"Button",BS_AUTORADIOBUTTON,49,125,69,13
+    DEFPUSHBUTTON   "保存设置",IDOK,83,162,50,14
+    PUSHBUTTON      "取消",IDCANCEL,187,162,50,14
+END
+
+IDD_ADDRESS DIALOGEX 0, 0, 142, 83
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "请输入地址"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,58,62,50,14
+    CONTROL         "",ID_ADDRESS,"HexEdit",WS_BORDER | WS_TABSTOP | 0x89,52,44,67,12
+    LTEXT           "        请输入一个地址，指定目标程序运行到这个地址才开始进行补丁。",IDC_STATIC,22,7,87,34
+    LTEXT           "16进制地址",IDC_STATIC,7,46,42,11
+END
+
+IDD_DIY DIALOGEX 0, 0, 413, 262
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "编写自定义补丁"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CODE,7,7,403,239,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | NOT WS_TABSTOP,WS_EX_DLGMODALFRAME
+    PUSHBUTTON      "取消",IDCANCEL,231,246,50,14
+    DEFPUSHBUTTON   "保存",IDOK,120,246,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 498
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 280
+    END
+
+    IDD_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_ADDRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 135
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 76
+    END
+
+    IDD_DIY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 410
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 260
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "res\\icon.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PETYPE
+//
+
+IDR_LOADER              PETYPE                  "res\\Loader.exe"
+IDR_PATCH               PETYPE                  "res\\Patch.exe"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "res\\bit.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

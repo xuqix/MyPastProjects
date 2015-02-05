@@ -1,0 +1,28 @@
+#include <resource.h>
+
+#define IDD_DIALOG                      101
+#define IDB_BITMAP1                     102
+#define ICO_MAIN                       103
+#define IDC_CHECK1                      1001
+#define IDC_BACKUP                      1001
+#define ID_OK				1005
+#define ID_CANCEL			2005
+
+
+
+ICO_MAIN  ICON  "main.ico"
+IDB_BITMAP1             BITMAP                  "bit.bmp"
+
+IDD_DIALOG DIALOGEX 350, 170, 197, 118
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+//EXSTYLE WS_EX_CLIENTEDGE
+CAPTION "文件补丁"
+FONT 9, "宋体"//FONT 8, "MS Shell Dlg", 400, 0, 0x1
+{//BEGIN
+    DEFPUSHBUTTON   "应用补丁",ID_OK,69,94,50,14,BS_FLAT
+    PUSHBUTTON      "退出",ID_CANCEL,130,94,50,14,BS_FLAT
+    CONTROL         102,IDC_STATIC,"Static",SS_BITMAP,21,25,83,57,WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+    LTEXT           "     此补丁为定制补丁，可能出现任何意外情况，请尽量创建备份以防悲剧.              ------From:K",IDC_STATIC,118,44,64,40
+    CONTROL         "创建备份",IDC_BACKUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,98,43,8
+    GROUPBOX        "",IDC_STATIC,7,7,183,108
+}//END
